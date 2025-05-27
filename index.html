@@ -3,14 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Wedding</title>
+  <title>Мерей & Ақмарал үйлену тойы</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f8f2f2;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(#fff0f5, #ffe4e1);
       text-align: center;
       margin: 0;
       padding: 0;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .container {
       max-width: 600px;
@@ -22,8 +28,10 @@
       border-radius: 10px;
     }
     h1 {
-      font-size: 2.5em;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
       margin-top: 0.5em;
+      color: #d6336c;
     }
     p {
       font-size: 1.2em;
@@ -44,23 +52,107 @@
     .btn:hover {
       background: #ff3b3b;
     }
+    .map-link {
+      margin-top: 15px;
+    }
+    .map-link img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+    .calendar {
+      margin-top: 30px;
+    }
+    .calendar-day {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin: 2px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .highlight {
+      border: 2px solid red;
+      color: red;
+      font-weight: bold;
+    }
+    #countdown {
+      font-size: 1.5em;
+      margin: 20px 0;
+      color: #6a1b9a;
+    }
+    .audio-player {
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="IMG_1011.jpeg" alt="Us" />
+
+    <!-- 2GIS icon -->
+    <div class="map-link">
+      <a href="https://2gis.kz/aktau/geo/70000001076872585" target="_blank">
+        <img src="2gis-icon.png" alt="Open in 2GIS" />
+      </a>
+    </div>
+
     <h1>Мерей & Ақмарал үйлену тойы</h1>
     <p>Біздің үйлену тойымызға қонақ болыңыздар!</p>
-    <p><strong>Күнi:</strong> Tамыз 08, 2025</p>
+    <p><strong>Күнi:</strong> Тамыз 08, 2025</p>
     <p><strong>Уақыты:</strong> 18:00</p>
     <p><strong>Орналасқан жері:</strong> Grand Hall, Aktau</p>
+
+    <div id="countdown"></div>
+
+    <!-- Simple calendar view -->
+    <div class="calendar">
+      <div>2025 Тамыз</div>
+      <div>
+        <!-- Simulated days -->
+        <span class="calendar-day">6</span>
+        <span class="calendar-day">7</span>
+        <span class="calendar-day highlight">8</span>
+        <span class="calendar-day">9</span>
+      </div>
+    </div>
+
+    <!-- Audio Button -->
+    <div class="audio-player">
+      <audio controls>
+        <source src="song.m4a" type="audio/mp4">
+        Сіздің браузеріңіз бұл аудио пішімін қолдамайды.
+      </audio>
+    </div>
 
     <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
     <form action="https://formspree.io/f/mgvkgole" method="POST">
       <input type="text" name="name" placeholder="Сіздің аты-жөніңіз" required /><br><br>
-      <button class="btn" type="submit" name="response" value="Yes">Иә, бұл сәтті сізбен бөлісетін боламын.</button>
-      <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын.</button>
+      <button class="btn" type="submit" name="response" value="Yes - Alone">Иә, жалғыз келемін</button>
+      <button class="btn" type="submit" name="response" value="Yes - With Partner">Иә, жұбыммен келемін</button>
+      <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын</button>
     </form>
   </div>
+
+  <!-- Countdown Script -->
+  <script>
+    const eventDate = new Date('2025-08-08T18:00:00');
+    const countdownEl = document.getElementById('countdown');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = eventDate - now;
+      if (diff <= 0) {
+        countdownEl.textContent = "Той басталды!";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdownEl.textContent = `Тойға дейін: ${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
+    }
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
