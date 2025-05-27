@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Wedding</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f8f2f2;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-top: 0.5em;
+    }
+    p {
+      font-size: 1.2em;
+    }
+    form {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #ff3b3b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="IMG_1011.jpeg" alt="Us" />
+    <h1>Merey & Alex's Wedding</h1>
+    <p>Біздің үйлену тойымызға қонақ болыңыздар!</p>
+    <p><strong>Күнi:</strong> Tамыз 08, 2025</p>
+    <p><strong>Уақыты:</strong> 18:00</p>
+    <p><strong>Орналасқан жері:</strong> Grand Hall, Aktau</p>
+
+    <h2>Will you join us?</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="Your name" required /><br><br>
+      <button class="btn" type="submit" name="response" value="Yes">Иә, мен сонда боламын</button>
+      <button class="btn" type="submit" name="response" value="No">Кешіріңіз, мен болмаймын</button>
+    </form>
+  </div>
+</body>
+</html>
