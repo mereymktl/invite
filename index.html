@@ -1,158 +1,171 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мерей & Ақмарал үйлену тойы</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Мерей & Ақмарал - Үйлену Тойы</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(#fff0f5, #ffe4e1);
-      text-align: center;
+      font-family: 'Poiret One', sans-serif;
+      background: linear-gradient(to bottom right, #f8f5f2, #fffdfc);
       margin: 0;
       padding: 0;
-      animation: fadeIn 1s ease-in;
+      color: #5e4632;
+      animation: fadeIn 1.5s ease-in;
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
+
     .container {
-      max-width: 600px;
+      max-width: 420px;
       margin: auto;
-      padding: 20px;
+      padding: 2rem;
+      text-align: center;
     }
+
     img {
       width: 100%;
-      border-radius: 10px;
+      object-fit: cover;
     }
+
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3em;
-      margin-top: 0.5em;
-      color: #d6336c;
+      font-size: 3rem;
+      color: #6e4b3a;
+      margin: 1rem 0 0.5rem;
     }
+
     p {
-      font-size: 1.2em;
+      font-size: 1.1rem;
+      margin: 0.4rem 0;
     }
-    form {
-      margin-top: 20px;
-    }
+
     .btn {
-      padding: 10px 20px;
-      margin: 10px;
-      background: #ff6b6b;
+      background: #6e4b3a;
       color: white;
+      padding: 0.75rem 1.5rem;
+      margin: 0.3rem;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
+      border-radius: 100px;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s;
     }
+
     .btn:hover {
-      background: #ff3b3b;
+      background: #8c6349;
     }
-    .map-link {
-      margin-top: 15px;
-    }
-    .map-link img {
-      width: 50px;
-      height: 50px;
+
+    .play-button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #6e4b3a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1.5rem auto;
+      font-weight: bold;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background 0.3s;
     }
+
+    .play-button:hover {
+      background-color: #8c6349;
+    }
+
+    #countdown {
+      font-size: 1.2rem;
+      margin: 1.5rem 0;
+      color: #865533;
+    }
+
     .calendar {
-      margin-top: 30px;
+      margin-top: 2rem;
     }
+
     .calendar-day {
       display: inline-block;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
       margin: 2px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 50%;
+      background: #eee;
+      color: #444;
     }
+
     .highlight {
-      border: 2px solid red;
-      color: red;
+      background: #865533;
+      color: white;
       font-weight: bold;
     }
-    #countdown {
-      font-size: 1.5em;
-      margin: 20px 0;
-      color: #6a1b9a;
-    }
-    .audio-player {
-      margin-top: 15px;
+
+    .map-link img {
+      width: 40px;
+      height: 40px;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="IMG_1011.jpeg" alt="Us" />
-
-    <!-- 2GIS icon -->
-    <div class="map-link">
-      <a href="https://2gis.kz/aktau/firm/70000001083277310?m=51.196994%2C43.683831%2F19.35" target="_blank">
-        <img src="2gis-icon.png" alt="Open in 2GIS" />
-      </a>
-    </div>
-
-    <h1>Мерей & Ақмарал үйлену тойы</h1>
-    <p>Біздің үйлену тойымызға қонақ болыңыздар!</p>
-    <p><strong>Күнi:</strong> Тамыз 08, 2025</p>
-    <p><strong>Уақыты:</strong> 18:00</p>
-    <p><strong>Орналасқан жері:</strong> Grand Hall, Aktau</p>
+    <img src="IMG_0838.jpeg" alt="Wedding Image">
+    <h1>Мерей & Ақмарал - Үйлену Тойы</h1>
+    <p>Тойымызға шақырамыз</p>
 
     <div id="countdown"></div>
 
-    <!-- Simple calendar view -->
-    <div class="calendar">
-      <div>2025 Тамыз</div>
-      <div>
-        <!-- Simulated days -->
-        <span class="calendar-day">6</span>
-        <span class="calendar-day">7</span>
-        <span class="calendar-day highlight">8</span>
-        <span class="calendar-day">9</span>
-      </div>
-    </div>
+    <div class="calendar" id="calendar"></div>
 
-    <!-- Audio Button -->
-    <div class="audio-player">
-      <audio controls>
-        <source src="song.m4a" type="audio/mp4">
-        Сіздің браузеріңіз бұл аудио пішімін қолдамайды.
-      </audio>
-    </div>
+    <a class="btn" href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank">Мекенжай</a>
 
-    <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
-    <form action="https://formspree.io/f/mgvkgole" method="POST">
-      <input type="text" name="name" placeholder="Сіздің аты-жөніңіз" required /><br><br>
-      <button class="btn" type="submit" name="response" value="Yes - Alone">Иә, жалғыз келемін</button>
-      <button class="btn" type="submit" name="response" value="Yes - With Partner">Иә, жұбыммен келемін</button>
-      <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын</button>
-    </form>
+    <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
+    <audio id="song" src="song.m4a"></audio>
   </div>
 
-  <!-- Countdown Script -->
   <script>
-    const eventDate = new Date('2025-08-08T18:00:00');
-    const countdownEl = document.getElementById('countdown');
+    // Countdown
+    const weddingDate = new Date("2025-08-08T00:00:00");
+    const countdown = document.getElementById('countdown');
+
     function updateCountdown() {
       const now = new Date();
-      const diff = eventDate - now;
+      const diff = weddingDate - now;
       if (diff <= 0) {
-        countdownEl.textContent = "Той басталды!";
+        countdown.textContent = "Бүгін үйлену тойымыз!";
         return;
       }
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-      countdownEl.textContent = `Тойға дейін: ${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
+      countdown.textContent = `${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд қалды`;
     }
+
     setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Calendar
+    const calendar = document.getElementById("calendar");
+    const highlightDay = 8;
+    const highlightMonth = 7; // August (0-indexed)
+    const daysInMonth = new Date(2025, highlightMonth + 1, 0).getDate();
+
+    for (let day = 1; day <= daysInMonth; day++) {
+      const span = document.createElement("span");
+      span.classList.add("calendar-day");
+      if (day === highlightDay) span.classList.add("highlight");
+      span.textContent = day;
+      calendar.appendChild(span);
+    }
   </script>
 </body>
 </html>
