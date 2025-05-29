@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Мерей & Ақмарал үйлену тойы</title>
 
-  <!-- Google Fonts with Kazakh support -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif&display=swap" rel="stylesheet">
+  <!-- Elegant Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Noto Sans', sans-serif;
+      font-family: 'Playfair Display', serif;
       background: linear-gradient(to bottom, #fffaf5, #fff3e0);
       text-align: center;
       margin: 0;
@@ -25,7 +25,7 @@
     }
 
     .container {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
       padding: 20px;
     }
@@ -36,7 +36,6 @@
     }
 
     h1 {
-      font-family: 'Noto Serif', serif;
       font-size: 2.8em;
       margin-top: 0.6em;
       color: #b8891c;
@@ -45,11 +44,13 @@
     h2 {
       color: #a45d00;
       font-weight: 600;
+      font-family: 'Noto Sans', sans-serif;
     }
 
     p {
       font-size: 1.2em;
       color: #6b4c28;
+      font-family: 'Noto Sans', sans-serif;
     }
 
     .btn {
@@ -78,31 +79,77 @@
       cursor: pointer;
     }
 
-    .calendar {
-      margin-top: 30px;
+    .highlight-date {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #b8891c;
+      margin: 20px 0 10px;
     }
 
-    .calendar-day {
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      margin: 2px;
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 30px;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .calendar-table th, .calendar-table td {
+      padding: 10px;
       border: 1px solid #d3a64c;
-      border-radius: 5px;
-      color: #7c5724;
+      text-align: center;
+      font-size: 1em;
     }
 
-    .highlight {
-      background: #b8891c;
+    .calendar-table th {
+      background-color: #fff2cf;
+      color: #a45d00;
+    }
+
+    .calendar-table .circle {
+      background-color: #b8891c;
       color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: inline-block;
+      line-height: 36px;
+    }
+
+    .poem {
+      margin: 40px 0 30px;
+      font-size: 1.2em;
+      font-family: 'Noto Sans', sans-serif;
+      color: #5e4632;
+    }
+
+    .poem .title {
+      font-size: 2em;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+    }
+
+    .poem .invite-bold {
       font-weight: bold;
     }
 
-    #countdown {
-      font-size: 1.4em;
-      margin: 20px 0;
-      color: #a45d00;
+    .timeline {
+      margin-top: 40px;
+    }
+
+    .timeline-item {
+      margin-bottom: 20px;
+    }
+
+    .timeline-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-time {
+      font-weight: bold;
+      font-size: 1.2em;
     }
 
     .audio-player {
@@ -137,41 +184,83 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
+    #countdown {
+      font-size: 1.4em;
+      margin: 30px 0 10px;
+      color: #a45d00;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="IMG_0838.jpeg" alt="Wedding Banner" />
 
-    <!-- 2GIS Map Icon -->
-    <div class="map-link">
-      <a href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank">
-        <img src="icon.png" alt="2GIS Location">
-      </a>
+    <div class="poem">
+      <div class="title">Құрметті қонақтар!</div>
+      <p>Ақ үмітпен табысқан қос ғашық,<br>
+        Бірге бастап жатыр енді жаңа шақ.<br>
+        Шақырамыз қуанышқа ортақтасып,<br>
+        Бақыт тілеп, батаменен жол ашып.</p>
+      <p>2025 жылдың 8 тамызы күні,<br>
+        Қуанышқа толады кең жүрегі.<br>
+        Салтанатты кешімізге төрден орын алыңыз,<br>
+        <span class="invite-bold">Мерей мен Ақмаралдың тойына келіңіз!</span></p>
     </div>
 
-    <h1>Мерей & Ақмарал үйлену тойы</h1>
-    <p>Біздің үйлену тойымызға қонақ болыңыздар!</p>
-    <p><strong>Күнi:</strong> 8 Тамыз, 2025</p>
-    <p><strong>Уақыты:</strong> 18:00</p>
-    <p><strong>Орналасқан жері:</strong> Grand Hall, Ақтау</p>
+    <div class="highlight-date">8 Тамыз 2025</div>
 
-    <div id="countdown"></div>
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Дс</th><th>Сс</th><th>Ср</th><th>Бс</th><th>Жм</th><th>Сн</th><th>Жс</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td><span class="circle">8</span></td><td>9</td><td>10</td><td>11</td></tr>
+        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+        <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+      </tbody>
+    </table>
 
-    <!-- Calendar -->
-    <div class="calendar">
-      <div>2025 Тамыз</div>
-      <div>
-        <span class="calendar-day">6</span>
-        <span class="calendar-day">7</span>
-        <span class="calendar-day highlight">8</span>
-        <span class="calendar-day">9</span>
+    <!-- Timeline with pictures -->
+    <div class="timeline">
+      <div class="timeline-item">
+        <img src="location.png" alt="Timeline 1">
+        <div class="timeline-time"> 18:00</div>
+        <div>Қонақтардың жиналуы</div>
+      </div>
+      <div class="timeline-item">
+        <img src="eating.png" alt="Timeline 2">
+        <div class="timeline-time"> 18:30</div>
+        <div>Қонақтардың орындарға жайғасуы</div>
+      </div>
+      <div class="timeline-item">
+        <img src="free-icon-arch-72192.png.webp" alt="Timeline 3">
+        <div class="timeline-time"> 18:45</div>
+        <div>Құдаларды қарсы алу</div>
+      </div>
+      <div class="timeline-item">
+        <img src="hand-in-hand.png.webp" alt="Timeline 4">
+        <div class="timeline-time"> 18:50</div>
+        <div>Жас жұбайларды қарсы алу</div>
+      </div>
+      <div class="timeline-item">
+        <img src="heart inside the arch.PNG" alt="Timeline 5">
+        <div class="timeline-time"> 19:00</div>
+        <div>Той салтанатының басталуы</div>
       </div>
     </div>
 
-    <!-- Play Song -->
-    <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
-    <audio id="song" src="song.m4a"></audio>
+    <!-- Location -->
+    <h2>Өтетін орны: Aktau Grand Hall</h2>
+    <div class="map-link">
+      <a href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank">
+        <img src="location.png" alt="2GIS Location">
+      </a>
+    </div>
 
     <!-- RSVP Form -->
     <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
@@ -181,6 +270,13 @@
       <button class="btn" type="submit" name="response" value="Yes - With Partner">Иә, жұбыммен келемін</button>
       <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын</button>
     </form>
+
+    <!-- Countdown -->
+    <div id="countdown"></div>
+
+    <!-- Play Song -->
+    <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
+    <audio id="song" src="song.m4a"></audio>
   </div>
 
   <!-- Countdown Script -->
