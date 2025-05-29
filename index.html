@@ -6,11 +6,11 @@
   <title>Мерей & Ақмарал үйлену тойы</title>
 
   <!-- Elegant Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       background: linear-gradient(to bottom, #fffaf5, #fff3e0);
       text-align: center;
       margin: 0;
@@ -33,24 +33,27 @@
     img {
       width: 100%;
       border-radius: 10px;
+      object-fit: cover;
+      height: 220px;
     }
 
     h1 {
-      font-size: 2.8em;
-      margin-top: 0.6em;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2em;
+      margin-top: 0.4em;
       color: #b8891c;
     }
 
     h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2em;
       color: #a45d00;
-      font-weight: 600;
-      font-family: 'Noto Sans', sans-serif;
+      margin-bottom: 0.2em;
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: #6b4c28;
-      font-family: 'Noto Sans', sans-serif;
     }
 
     .btn {
@@ -80,28 +83,32 @@
     }
 
     .highlight-date {
-      font-size: 1.8em;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.4em;
       font-weight: bold;
       color: #b8891c;
-      margin: 20px 0 10px;
+      margin: 30px 0 10px;
+    }
+
+    .calendar-header-img {
+      width: 60px;
+      margin-bottom: 10px;
     }
 
     .calendar-table {
       width: 100%;
-      border-collapse: collapse;
-      margin: 10px 0 30px;
-      font-family: 'Noto Sans', sans-serif;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+      color: #6b4c28;
+      font-family: 'Cormorant Garamond', serif;
     }
 
     .calendar-table th, .calendar-table td {
-      padding: 10px;
-      border: 1px solid #d3a64c;
+      padding: 6px;
       text-align: center;
-      font-size: 1em;
     }
 
     .calendar-table th {
-      background-color: #fff2cf;
       color: #a45d00;
     }
 
@@ -109,23 +116,21 @@
       background-color: #b8891c;
       color: white;
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 30px;
+      height: 30px;
       display: inline-block;
-      line-height: 36px;
+      line-height: 30px;
     }
 
     .poem {
       margin: 40px 0 30px;
-      font-size: 1.2em;
-      font-family: 'Noto Sans', sans-serif;
-      color: #5e4632;
+      font-size: 1.3em;
     }
 
     .poem .title {
-      font-size: 2em;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.4em;
       font-weight: bold;
-      font-family: 'Playfair Display', serif;
       margin-bottom: 15px;
     }
 
@@ -138,18 +143,20 @@
     }
 
     .timeline-item {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .timeline-item img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
       border-radius: 10px;
       margin-bottom: 10px;
     }
 
     .timeline-time {
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
 
     .audio-player {
@@ -210,6 +217,8 @@
 
     <div class="highlight-date">8 Тамыз 2025</div>
 
+    <img src="toi saltanaty.PNG" alt="Calendar Top Decoration" class="calendar-header-img" />
+
     <table class="calendar-table">
       <thead>
         <tr>
@@ -225,36 +234,34 @@
       </tbody>
     </table>
 
-    <!-- Timeline with pictures -->
     <div class="timeline">
       <div class="timeline-item">
         <img src="location.png" alt="Timeline 1">
-        <div class="timeline-time"> 18:00</div>
+        <div class="timeline-time">18:00</div>
         <div>Қонақтардың жиналуы</div>
       </div>
       <div class="timeline-item">
         <img src="eating.png" alt="Timeline 2">
-        <div class="timeline-time"> 18:30</div>
+        <div class="timeline-time">18:30</div>
         <div>Қонақтардың орындарға жайғасуы</div>
       </div>
       <div class="timeline-item">
         <img src="free-icon-arch-72192.png.webp" alt="Timeline 3">
-        <div class="timeline-time"> 18:45</div>
+        <div class="timeline-time">18:45</div>
         <div>Құдаларды қарсы алу</div>
       </div>
       <div class="timeline-item">
         <img src="hand-in-hand.png.webp" alt="Timeline 4">
-        <div class="timeline-time"> 18:50</div>
+        <div class="timeline-time">18:50</div>
         <div>Жас жұбайларды қарсы алу</div>
       </div>
       <div class="timeline-item">
         <img src="heart inside the arch.PNG" alt="Timeline 5">
-        <div class="timeline-time"> 19:00</div>
+        <div class="timeline-time">19:00</div>
         <div>Той салтанатының басталуы</div>
       </div>
     </div>
 
-    <!-- Location -->
     <h2>Өтетін орны: Aktau Grand Hall</h2>
     <div class="map-link">
       <a href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank">
@@ -262,7 +269,6 @@
       </a>
     </div>
 
-    <!-- RSVP Form -->
     <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
     <form action="https://formspree.io/f/mgvkgole" method="POST">
       <input type="text" name="name" placeholder="Сіздің аты-жөніңіз" required /><br>
@@ -271,15 +277,12 @@
       <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын</button>
     </form>
 
-    <!-- Countdown -->
     <div id="countdown"></div>
 
-    <!-- Play Song -->
     <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
     <audio id="song" src="song.m4a"></audio>
   </div>
 
-  <!-- Countdown Script -->
   <script>
     const eventDate = new Date('2025-08-08T18:00:00');
     const countdownEl = document.getElementById('countdown');
