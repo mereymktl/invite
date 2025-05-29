@@ -6,11 +6,12 @@
   <title>Мерей & Ақмарал үйлену тойы</title>
 
   <!-- Elegant Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Use Playfair Display for all text */
     body {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       background: linear-gradient(to bottom, #fffaf5, #fff3e0);
       text-align: center;
       margin: 0;
@@ -33,27 +34,25 @@
     img {
       width: 100%;
       border-radius: 10px;
-      object-fit: cover;
-      height: 220px;
     }
 
     h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 3.2em;
-      margin-top: 0.4em;
+      font-size: 2.8em;
+      margin-top: 0.6em;
       color: #b8891c;
     }
 
     h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.2em;
       color: #a45d00;
-      margin-bottom: 0.2em;
+      font-weight: 600;
+      /* Now uses Playfair Display from body */
     }
 
     p {
-      font-size: 1.3em;
+      font-size: 1.2em;
       color: #6b4c28;
+      /* Now uses Playfair Display from body */
+      line-height: 1.5;
     }
 
     .btn {
@@ -66,6 +65,8 @@
       font-size: 1em;
       cursor: pointer;
       font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      transition: background 0.3s;
     }
 
     .btn:hover {
@@ -83,16 +84,11 @@
     }
 
     .highlight-date {
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Playfair Display', serif;
       font-size: 2.4em;
       font-weight: bold;
       color: #b8891c;
       margin: 30px 0 10px;
-    }
-
-    .calendar-header-img {
-      width: 60px;
-      margin-bottom: 10px;
     }
 
     .calendar-table {
@@ -100,7 +96,8 @@
       margin: 0 auto 30px;
       font-size: 1.1em;
       color: #6b4c28;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
+      border-collapse: collapse;
     }
 
     .calendar-table th, .calendar-table td {
@@ -124,12 +121,13 @@
 
     .poem {
       margin: 40px 0 30px;
-      font-size: 1.3em;
+      font-size: 1.2em;
+      color: #5e4632;
+      line-height: 1.5;
     }
 
     .poem .title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 2.4em;
+      font-size: 2em;
       font-weight: bold;
       margin-bottom: 15px;
     }
@@ -143,20 +141,25 @@
     }
 
     .timeline-item {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
+    /* Set timeline images to same size */
     .timeline-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+      width: 70px;
+      height: 70px;
       border-radius: 10px;
       margin-bottom: 10px;
+      object-fit: contain;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .timeline-time {
       font-weight: bold;
-      font-size: 1.3em;
+      font-size: 1.2em;
+      margin-bottom: 5px;
     }
 
     .audio-player {
@@ -177,6 +180,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
+      font-family: 'Playfair Display', serif;
     }
 
     .play-button:hover {
@@ -190,12 +194,14 @@
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-family: 'Playfair Display', serif;
     }
 
     #countdown {
       font-size: 1.4em;
       margin: 30px 0 10px;
       color: #a45d00;
+      font-family: 'Playfair Display', serif;
     }
   </style>
 </head>
@@ -217,9 +223,7 @@
 
     <div class="highlight-date">8 Тамыз 2025</div>
 
-    <img src="toi saltanaty.PNG" alt="Calendar Top Decoration" class="calendar-header-img" />
-
-    <table class="calendar-table">
+    <table class="calendar-table" aria-label="Тамыз айының күнтізбесі">
       <thead>
         <tr>
           <th>Дс</th><th>Сс</th><th>Ср</th><th>Бс</th><th>Жм</th><th>Сн</th><th>Жс</th>
@@ -234,41 +238,44 @@
       </tbody>
     </table>
 
+    <!-- Timeline with pictures -->
     <div class="timeline">
       <div class="timeline-item">
-        <img src="location.png" alt="Timeline 1">
+        <img src="location.png" alt="Қонақтардың жиналуы">
         <div class="timeline-time">18:00</div>
         <div>Қонақтардың жиналуы</div>
       </div>
       <div class="timeline-item">
-        <img src="eating.png" alt="Timeline 2">
+        <img src="eating.png" alt="Қонақтардың орындарға жайғасуы">
         <div class="timeline-time">18:30</div>
         <div>Қонақтардың орындарға жайғасуы</div>
       </div>
       <div class="timeline-item">
-        <img src="free-icon-arch-72192.png.webp" alt="Timeline 3">
+        <img src="free-icon-arch-72192.png.webp" alt="Құдаларды қарсы алу">
         <div class="timeline-time">18:45</div>
         <div>Құдаларды қарсы алу</div>
       </div>
       <div class="timeline-item">
-        <img src="hand-in-hand.png.webp" alt="Timeline 4">
+        <img src="hand-in-hand.png.webp" alt="Жас жұбайларды қарсы алу">
         <div class="timeline-time">18:50</div>
         <div>Жас жұбайларды қарсы алу</div>
       </div>
       <div class="timeline-item">
-        <img src="heart inside the arch.PNG" alt="Timeline 5">
+        <img src="heart inside the arch.PNG" alt="Той салтанатының басталуы">
         <div class="timeline-time">19:00</div>
         <div>Той салтанатының басталуы</div>
       </div>
     </div>
 
+    <!-- Location -->
     <h2>Өтетін орны: Aktau Grand Hall</h2>
     <div class="map-link">
-      <a href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank">
+      <a href="https://2gis.kz/aktau/firm/70000001083277310" target="_blank" rel="noopener noreferrer">
         <img src="location.png" alt="2GIS Location">
       </a>
     </div>
 
+    <!-- RSVP Form -->
     <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
     <form action="https://formspree.io/f/mgvkgole" method="POST">
       <input type="text" name="name" placeholder="Сіздің аты-жөніңіз" required /><br>
@@ -277,12 +284,15 @@
       <button class="btn" type="submit" name="response" value="No">Кешіріңіз, қатыса алмаймын</button>
     </form>
 
+    <!-- Countdown -->
     <div id="countdown"></div>
 
+    <!-- Play Song -->
     <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
     <audio id="song" src="song.m4a"></audio>
   </div>
 
+  <!-- Countdown Script -->
   <script>
     const eventDate = new Date('2025-08-08T18:00:00');
     const countdownEl = document.getElementById('countdown');
@@ -290,21 +300,20 @@
     function updateCountdown() {
       const now = new Date();
       const diff = eventDate - now;
-
       if (diff <= 0) {
-        countdownEl.textContent = "Той басталды!";
+        countdownEl.textContent = "Мереке басталды!";
+        clearInterval(timer);
         return;
       }
-
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.textContent = `Тойға дейін: ${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
+      countdownEl.textContent = `Қалған уақыт: ${days} күн ${hours} сағат ${minutes} минут ${seconds} секунд`;
     }
 
-    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
