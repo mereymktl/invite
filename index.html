@@ -8,6 +8,9 @@
   <!-- Elegant Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" />
 
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Marck+Script&display=swap" rel="stylesheet">
+
+
 
   <style>
     /* Use Playfair Display for all text */
@@ -38,7 +41,7 @@
     }
 
     h1, .poem .title {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Prata', serif;
       font-weight: 400;
       font-size: 3em;
       color: #b8891c;
@@ -52,7 +55,7 @@
     }
 
     p, input[type="text"], button, #countdown, .btn {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Marck Script', cursive;
       color: #6b4c28;
     }
 
@@ -180,16 +183,15 @@
     }
 
     .play-button {
-      width: 70px;
-      height: 70px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background-color: #b8891c;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 1.5rem auto;
-      font-weight: bold;
+      margin: 1rem auto 0.5rem;
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
@@ -221,6 +223,12 @@
 <body>
   <div class="container">
     <img src="IMG_0838.jpeg" alt="Wedding Banner" />
+
+    <!-- Music Play Button Below Main Image -->
+    <div class="audio-player">
+      <button class="play-button" onclick="toggleAudio()">▶️</button>
+      <audio id="wedding-audio" src="song.m4a"></audio>
+    </div>
 
     <div class="poem">
       <div class="title">Құрметті қонақтар!</div>
@@ -289,7 +297,7 @@
     </div>
 
     <!-- RSVP Form -->
-    <h2>Сіз бізбен бірге ортақ мерекемізге қосыла аласыз ба?</h2>
+    <h2>Біздің қуанышымызға қосыла аласыз ба?</h2>
     <form action="https://formspree.io/f/mgvkgole" method="POST">
       <input type="text" name="name" placeholder="Сіздің аты-жөніңіз" required /><br>
       <button class="btn" type="submit" name="response" value="Yes - Alone">Иә, жалғыз келемін</button>
@@ -299,11 +307,6 @@
 
     <!-- Countdown -->
     <div id="countdown"></div>
-
-    <!-- Play Song -->
-    <div class="play-button" onclick="document.getElementById('song').play()">Ойнату</div>
-    <audio id="song" src="song.m4a"></audio>
-  </div>
 
   <!-- Countdown Script -->
   <script>
@@ -327,6 +330,18 @@
 
     updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
+  </script>
+
+
+  <script>
+    const audio = document.getElementById("wedding-audio");
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
   </script>
 </body>
 </html>
