@@ -8,14 +8,16 @@
   <!-- Elegant Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Marck+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
 
 
 
   <style>
     /* Use Playfair Display for all text */
     body {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Serif', serif;
       background: linear-gradient(to bottom, #fffaf5, #fff3e0);
       text-align: center;
       margin: 0;
@@ -41,8 +43,7 @@
     }
 
     h1, .poem .title {
-      font-family: 'Prata', serif;
-      font-weight: 400;
+      font-family: 'Alice', serif;
       font-size: 3em;
       color: #b8891c;
       margin-top: 0.6em;
@@ -55,7 +56,7 @@
     }
 
     p, input[type="text"], button, #countdown, .btn {
-      font-family: 'Marck Script', cursive;
+      font-family: 'Noto Serif', serif;
       color: #6b4c28;
     }
 
@@ -124,7 +125,7 @@
     }
 
     .poem {
-      margin: 40px 0 30px;
+      margin: 20px 0 30px;
       font-size: 1.2em;
       color: #5e4632;
       line-height: 1.5;
@@ -178,25 +179,35 @@
       margin-bottom: 5px;
     }
 
+    .rotating-ring {
+      width: 120px;
+      height: 120px;
+      margin: auto;
+      position: relative;
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     .audio-player {
       margin-top: 20px;
+      position: relative;
+      height: 130px;
     }
 
     .play-button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: #b8891c;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 1rem auto 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-      font-family: 'Playfair Display', serif;
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
     }
+
 
     .play-button:hover {
       background-color: #a37311;
@@ -226,9 +237,13 @@
 
     <!-- Music Play Button Below Main Image -->
     <div class="audio-player">
+      <div class="rotating-ring">
+        <img src="click to play.PNG" alt="Rotating Ring" style="width: 100%; height: 100%;">
+      </div>
       <button class="play-button" onclick="toggleAudio()">▶️</button>
       <audio id="wedding-audio" src="song.m4a"></audio>
     </div>
+    
 
     <div class="poem">
       <div class="title">Құрметті қонақтар!</div>
