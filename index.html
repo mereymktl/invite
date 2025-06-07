@@ -15,7 +15,6 @@
 
 
   <style>
-    /* Use Playfair Display for all text */
     body {
       font-family: 'Noto Serif', serif;
       background: linear-gradient(to bottom, #fffaf5, #fff3e0);
@@ -149,7 +148,6 @@
       margin-bottom: 20px;
     }
 
-    /* Set timeline images to same size */
     .timeline-item img {
       width: 70px;
       height: 70px;
@@ -161,36 +159,11 @@
       margin-right: auto;
     }
 
-    .timeline-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 10px;
-      object-fit: cover;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 10px;
-    }
-
-
     .timeline-time {
       font-weight: bold;
       font-size: 1.2em;
       margin-bottom: 5px;
     }
-
-    .rotating-ring {
-      animation: rotate 4s linear infinite;
-      width: 80px;
-      height: 80px;
-    }
-
-    @keyframes rotate {
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
 
     .audio-player {
       margin-top: 20px;
@@ -198,22 +171,51 @@
       height: 130px;
     }
 
+    .audio-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .rotating-ring {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100px;
+      animation: rotate 4s linear infinite;
+      z-index: 1;
+    }
+
+    .rotating-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      transform: translate(-50%, -50%);
       background: none;
       border: none;
       outline: none;
-      padding: 0;
-      margin: 0 auto;
-      display: block;
       cursor: pointer;
     }
 
     .play-button img {
       width: 50px;
       height: 50px;
-      object-fit: contain;
     }
 
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
     input[type="text"] {
       padding: 10px;
@@ -237,14 +239,31 @@
   <div class="container">
     <img src="IMG_0838.jpeg" alt="Wedding Banner" />
 
-    <!-- Music Play Button Below Main Image -->
     <div class="audio-player">
-      <div class="rotating-ring">
-        <img src="click to play.PNG" alt="Rotating Ring" style="width: 100%; height: 100%;">
+      <div class="audio-wrapper">
+        <div class="rotating-ring">
+          <img src="e344cec4-dcd5-417b-84ac-cf7a9552c6a6.png" alt="Click to Play Ring">
+        </div>
+        <button class="play-button" onclick="toggleAudio()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Play_font_awesome.svg/1200px-Play_font_awesome.svg.png" alt="Play Button">
+        </button>
       </div>
-      <button class="play-button" onclick="toggleAudio()">▶️</button>
       <audio id="wedding-audio" src="song.m4a"></audio>
     </div>
+
+    <h1>Құрметті қонақтар!</h1>
+  </div>
+
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('wedding-audio');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
     
 
     <div class="poem">
