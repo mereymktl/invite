@@ -239,19 +239,25 @@
     }
 
     .hosts {
-      font-family: 'Noto Serif', serif;
-      font-size: 1.5em;
-      color: #6b4c28;
       margin: 40px auto 20px;
       text-align: center;
-      font-weight: 500;
       animation: fadeIn 1.5s ease-in;
     }
 
-.host-names {
+    .hosts-title {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.6em;
+      color: #6b4c28;
+      margin-bottom: 8px;
+    }
+
+    .host-names {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.6em;
       font-weight: bold;
       color: #b8891c;
     }
+
 
   </style>
 </head>
@@ -347,7 +353,8 @@
     </div>
 
     <div class="hosts">
-      Той иелері: <span class="host-names">Амангелді Лола</span>
+      <div class="hosts-title">Той иелері:</div>
+      <div class="host-names">Амангелді Лола</div>
     </div>
 
     <!-- RSVP Form -->
@@ -384,18 +391,6 @@
 
     updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
-  </script>
-
-
-  <script>
-    const audio = document.getElementById("wedding-audio");
-    function toggleAudio() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    }
   </script>
 </body>
 </html>
